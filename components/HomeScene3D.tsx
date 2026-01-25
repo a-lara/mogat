@@ -1,7 +1,8 @@
 'use client';
 
 import { Environment, Html, OrbitControls, Scroll, ScrollControls } from '@react-three/drei';
-import { Canvas, useLoader } from '@react-three/fiber';
+import { Canvas, useLoader, useThree } from '@react-three/fiber';
+import { useEffect, useRef } from 'react';
 import {
   Bloom,
   BrightnessContrast,
@@ -21,6 +22,29 @@ import Logo3D from './shapes/Logo3D';
 function SceneContent() {
   // Load nebula texture
   const texture = useLoader(TextureLoader, '/nebula-texture.jpg');
+  const controlsRef = useRef<any>(null);
+
+  // Detect if mobile device
+  const isMobile = React.useMemo(() => {
+    if (typeof window === 'undefined') return false;
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+  }, []);
+
+  // Disable touch controls on mobile to allow scrolling
+  useEffect(() => {
+    if (controlsRef.current && isMobile) {
+      const controls = controlsRef.current;
+      // Disable all touch interactions
+      if (controls.touches) {
+        controls.touches.ONE = 0; // Disable one-finger rotation
+        controls.touches.TWO = 0; // Disable two-finger zoom/pan
+      }
+      // Disable rotate on mobile
+      controls.enableRotate = false;
+      // Disable mouse controls too (only keep autoRotate)
+      controls.enableDamping = false;
+    }
+  }, [isMobile]);
 
   // Memoize arrow styles to prevent object recreation
   const arrow = React.useMemo(() => ({
@@ -36,9 +60,11 @@ function SceneContent() {
       <Environment files="/hdr/misty2.hdr" />
 
       <OrbitControls
+        ref={controlsRef}
         autoRotate
         enablePan={false}
         enableZoom={false}
+        enableRotate={!isMobile}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
       />
@@ -99,11 +125,26 @@ function SceneContent() {
 
 export default function HomeScene3D() {
   return (
-    <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 0 }}>
+    <div 
+      style={{ 
+        width: '100%', 
+        height: '100vh', 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        zIndex: 0,
+        touchAction: 'pan-y',
+        WebkitOverflowScrolling: 'touch'
+      }}
+    >
       <Canvas
         className="canvas"
         gl={{ alpha: true, sortObjects: true }}
-        style={{ touchAction: 'auto' }}
+        style={{ 
+          touchAction: 'pan-y',
+          width: '100%',
+          height: '100%'
+        }}
       >
         <SceneContent />
       </Canvas>
