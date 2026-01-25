@@ -1,8 +1,8 @@
 'use client';
 
 import { Environment, Html, OrbitControls, Scroll, ScrollControls } from '@react-three/drei';
-import { Canvas, useLoader, useThree } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
+import { Canvas, useLoader, useThree, useFrame } from '@react-three/fiber';
+import { useEffect, useRef, useState } from 'react';
 import {
   Bloom,
   BrightnessContrast,
@@ -19,32 +19,36 @@ import { LowerStarField, UpperStarField } from './shapes/StarField3D';
 import HomeImages from './shapes/HomeImages';
 import Logo3D from './shapes/Logo3D';
 
+function AutoRotateCamera() {
+  useFrame((state) => {
+    // Simple auto-rotation to replace OrbitControls on mobile
+    const angle = 0.001; // Rotation speed
+    const x = state.camera.position.x;
+    const z = state.camera.position.z;
+    state.camera.position.x = x * Math.cos(angle) - z * Math.sin(angle);
+    state.camera.position.z = x * Math.sin(angle) + z * Math.cos(angle);
+    state.camera.lookAt(0, 0, 0);
+  });
+  return null;
+}
+
 function SceneContent() {
   // Load nebula texture
   const texture = useLoader(TextureLoader, '/nebula-texture.jpg');
   const controlsRef = useRef<any>(null);
 
-  // Detect if mobile device
-  const isMobile = React.useMemo(() => {
-    if (typeof window === 'undefined') return false;
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
-  }, []);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Disable touch controls on mobile to allow scrolling
   useEffect(() => {
-    if (controlsRef.current && isMobile) {
-      const controls = controlsRef.current;
-      // Disable all touch interactions
-      if (controls.touches) {
-        controls.touches.ONE = 0; // Disable one-finger rotation
-        controls.touches.TWO = 0; // Disable two-finger zoom/pan
-      }
-      // Disable rotate on mobile
-      controls.enableRotate = false;
-      // Disable mouse controls too (only keep autoRotate)
-      controls.enableDamping = false;
-    }
-  }, [isMobile]);
+    const checkMobile = () => {
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isMobileSize = window.innerWidth < 1024;
+      setIsMobile(isTouch || isMobileSize);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Memoize arrow styles to prevent object recreation
   const arrow = React.useMemo(() => ({
@@ -53,21 +57,26 @@ function SceneContent() {
     left: '370px',
     top: '300px',
     fontSize: '42px',
+    zIndex: 10, // Ensure arrow is visible
   }), []);
 
   return (
     <>
       <Environment files="/hdr/misty2.hdr" />
 
-      <OrbitControls
-        ref={controlsRef}
-        autoRotate
-        enablePan={false}
-        enableZoom={false}
-        enableRotate={!isMobile}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
+      {!isMobile ? (
+        <OrbitControls
+          ref={controlsRef}
+          autoRotate
+          enablePan={false}
+          enableZoom={false}
+          enableRotate={true}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+      ) : (
+        <AutoRotateCamera />
+      )}
       <ScrollControls damping={1.2} pages={12}>
         <Scroll>
           {/* Star field */}
