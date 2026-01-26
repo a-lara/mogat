@@ -18,6 +18,8 @@ import Torus from './shapes/Torus';
 import { LowerStarField, UpperStarField } from './shapes/StarField3D';
 import HomeImages from './shapes/HomeImages';
 import Logo3D from './shapes/Logo3D';
+import OverlayText from './OverlayText';
+import BioSection from './BioSection';
 
 function AutoRotateCamera() {
   useFrame((state) => {
@@ -33,6 +35,7 @@ function AutoRotateCamera() {
 }
 
 function SceneContent() {
+  const { height } = useThree((state) => state.viewport);
   // Load nebula texture
   const texture = useLoader(TextureLoader, '/nebula-texture.jpg');
   const controlsRef = useRef<any>(null);
@@ -49,16 +52,6 @@ function SceneContent() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  // Memoize arrow styles to prevent object recreation
-  const arrow = React.useMemo(() => ({
-    position: 'fixed' as const,
-    color: 'white',
-    left: '370px',
-    top: '300px',
-    fontSize: '42px',
-    zIndex: 10, // Ensure arrow is visible
-  }), []);
 
   return (
     <>
@@ -77,7 +70,7 @@ function SceneContent() {
       ) : (
         <AutoRotateCamera />
       )}
-      <ScrollControls damping={1.2} pages={12}>
+      <ScrollControls damping={1.2} pages={15}>
         <Scroll>
           {/* Star field */}
           <UpperStarField />
@@ -112,13 +105,46 @@ function SceneContent() {
             <sphereGeometry args={[2.1, 20, 25]} />
           </ShapeBlue>
 
-          {/* Gallery at bottom */}
-          <HomeImages />
-
-          {/* Scrolling arrow */}
-          <Html>
-            <div style={arrow}>↓</div>
+          {/* Scrolling Arrow - Page 1 */}
+          <Html position={[0, -height * 0.45, 0]} center zIndexRange={[100, 0]}>
+            <div style={{ 
+              color: 'white', 
+              fontSize: '42px',
+              animation: 'bounce 2s infinite',
+              pointerEvents: 'none'
+            }}>
+              ↓
+            </div>
           </Html>
+
+          {/* Bio Section - Page 3 */}
+          <Html position={[0, -height * 2.9, 0]} center zIndexRange={[100, 0]} style={{ width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
+            <div className="w-full pointer-events-auto" style={{ width: '100vw', maxWidth: '100vw' }}>
+              <BioSection />
+            </div>
+          </Html>
+
+          {/* Belkitsch Section - Page 4 */}
+          <Html position={[0, -height * 4, 0]} center zIndexRange={[100, 0]} style={{ width: '100vw', pointerEvents: 'none' }}>
+            <div className="w-full flex justify-center pointer-events-auto">
+              <OverlayText
+                title="BELKITSCH"
+                subtitle="{CON} TENIDO {ES} TÉTICO"
+                text={[
+                  "[…] el belkitsch, seguiremos diciendo que es lo cotidiano de un gusto común, digerible, asimilable, llevado al museo.",
+                  "Es el ejercicio de un embellecimiento –kitsch– controlado: el mellizo guapo del kitsch, el que es culto pero llama la atención por ser bello.",
+                  "A diferencia del kitsch que intentaba ser culto y era atractivo –para algunos–; pero al no tener ese acervo cultural no cuajaba en todos, no se le tomaba en serio. El belkitsch, sí (es)."
+                ]}
+                footer="(Mora G., 2017)"
+                align="right"
+              />
+            </div>
+          </Html>
+
+          {/* Gallery at bottom - Shifted down */}
+          <group position={[0, -height * 1, 0]}>
+            <HomeImages />
+          </group>
         </Scroll>
       </ScrollControls>
 

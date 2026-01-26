@@ -30,7 +30,14 @@ export default function Header() {
         className={`header wavo_nav ${isSticky ? 'is-sticky-active' : ''} fixed top-0 left-0 right-0 z-[997] transition-all duration-300`}
       >
         <div className={`header_container ${isSticky ? 'bg-[#111] border-b border-[#24d5b4] shadow-[0_5px_20px_rgba(186,189,165,0.2)]' : 'bg-transparent'} transition-all duration-300`}>
-          <div className="header_inner relative flex items-center justify-between max-w-7xl mx-auto px-6 lg:px-8 h-20">
+          <div className="header_inner relative flex items-center justify-between w-full mx-auto" style={{ 
+            maxWidth: '100%',
+            paddingLeft: '6%',
+            paddingRight: '6%',
+            paddingTop: '1.5rem',
+            paddingBottom: '1.5rem',
+            minHeight: '5rem'
+          }}>
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="block hover:opacity-80 transition-opacity">
