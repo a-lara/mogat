@@ -109,11 +109,11 @@ const HomeImage = React.memo(function HomeImage({
     
     let aspectRatio = 1;
     if (texture && texture.image) {
-      const imgW = texture.image.width;
-      const imgH = texture.image.height;
-      if (imgH > 0) {
-        aspectRatio = imgW / imgH;
-      }
+      // Cast to any to access width/height properties on texture.image which can be various types
+      const img = texture.image as any;
+      const imgW = img.width || 1;
+      const imgH = img.height || 1;
+      aspectRatio = imgW / imgH;
     }
     
     const cropW = cropSize[0];
