@@ -101,3 +101,36 @@
 [12:13:33.294] Server  LOG     ✓ Compiled in 44ms
 [12:14:14.372] Server  LOG     ✓ Compiled in 16ms
 [12:16:31.649] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:18:11.971] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:18:12.838] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:18:24.895] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:18:58.358] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:19:25.029] Server  LOG     ✓ Compiled in 0ms
+[12:19:26.329] Browser WARN    Image with src "/portfolio/2025_new_colabo_web-980x788.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[12:19:28.249] Server  LOG     ✓ Compiled in 43ms
+[12:19:30.714] Server  LOG     ✓ Compiled in 23ms
+[12:19:31.994] Server  LOG     ✓ Compiled in 14ms
+[12:19:32.098] Browser WARN    Image with src "/portfolio/2025_new_colabo_web-980x788.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[12:19:33.782] Server  LOG     ✓ Compiled in 12ms
+[12:20:12.788] Server  LOG     ✓ Compiled in 14ms
+[12:20:27.474] Browser WARN    Image with src "/portfolio/2025_new_colabo_web-980x788.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[12:20:44.694] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:20:45.195] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:20:46.788] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:21:08.873] Server  LOG     ✓ Compiled in 14ms
+[12:22:22.419] Server  LOG     ✓ Compiled in 36ms
+[12:22:27.815] Server  LOG     ✓ Compiled in 39ms
+[12:22:32.388] Server  LOG     ✓ Compiled in 46ms
+[12:22:33.684] Server  LOG     ✓ Compiled in 40ms
+[12:23:05.986] Browser WARN    Image with src "/portfolio/2025_proud_and_unprejudiced_web-980x1645.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[12:23:55.245] Server  LOG     ✓ Compiled in 33ms
+[12:23:55.612] Server  LOG     ✓ Compiled in 32ms
+[12:24:07.979] Server  LOG     ✓ Compiled in 31ms
+[12:24:47.310] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:24:48.630] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:24:49.895] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:24:50.810] Server  LOG     ✓ Compiled in 39ms

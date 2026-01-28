@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Nebula from '@/components/Nebula';
-import StarField from '@/components/StarField';
 import Link from 'next/link';
 
 type IsotopeType = typeof import('isotope-layout');
@@ -275,21 +273,22 @@ export default function PortfolioGallery() {
   }, [artworks]);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      {/* Header Section with Nebula */}
-      <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <Nebula />
-        <StarField />
-        <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <h1 className="portfolio-title text-6xl md:text-8xl lg:text-9xl font-arbonnie font-bold mb-12 tracking-[0.15em] uppercase">
+    <div className="w-full text-white">
+      {/* Header Section */}
+      <section className="relative w-full py-8 md:py-12 mb-8">
+        <div className="w-full text-center">
+          <h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter text-white font-arbonnie leading-tight whitespace-nowrap mb-12"
+            style={{ fontFamily: "'ARBONNIE', 'Americana', 'Bellerose', cursive, sans-serif" }}
+          >
             PORTFOLIO
           </h1>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="relative w-full py-6 md:py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative w-full py-6 md:py-8 border-t border-gray-800 mb-8">
+        <div className="w-full">
           <div className="flex flex-wrap justify-center items-center gap-1 md:gap-2">
             {filters.map((filter, index) => (
               <span key={filter.id} className="flex items-center">
@@ -297,7 +296,7 @@ export default function PortfolioGallery() {
                   onClick={() => setActiveFilter(filter.id)}
                   className={`text-xs md:text-sm font-poppins font-light tracking-wider transition-all duration-300 ${
                     activeFilter === filter.id
-                      ? 'text-[#0693e3]'
+                      ? 'text-[#ff6b35]'
                       : 'text-white hover:opacity-70'
                   }`}
                 >
@@ -313,10 +312,8 @@ export default function PortfolioGallery() {
       </section>
 
       {/* Gallery */}
-      <section className="relative w-full py-8 px-4 sm:px-6 lg:px-8">
-        <Nebula />
-        <StarField />
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section className="relative w-full py-8">
+        <div className="relative z-10 w-full">
           <div ref={galleryRef} className="portfolio-gallery">
             {/* Sizer for Isotope masonry */}
             <div className="portfolio-item-sizer"></div>
