@@ -1,0 +1,103 @@
+[00:00:01.798] Server  LOG     ✓ Ready in 1616ms
+[00:00:03.697] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.596] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:18.128] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:37:33.967] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:37:34.508] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:48:34.114] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:56:10.418] Server  LOG     ✓ Compiled in 20ms
+[00:59:03.148] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/cv/CVJuanJoseModern.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:59:03.205] Server  LOG     ✓ Compiled in 28ms
+[00:59:03.250] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/cv/CVJuanJoseModern.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:59:03.447] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:19:32.501] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:20:05.268] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[05:20:18.601] Server  LOG     ✓ Compiled in 52ms
+[09:46:19.339] Server  LOG     ✓ Compiled in 33ms
+[10:32:13.938] Server  LOG     ✓ Compiled in 31ms
+[10:41:48.262] Server  LOG     ✓ Compiled in 0ms
+[10:43:44.256] Server  LOG     ✓ Compiled in 29ms
+[10:47:14.880] Server  LOG     ✓ Compiled in 25ms
+[10:55:57.277] Server  LOG     ✓ Compiled in 15ms
+[10:55:57.579] Server  LOG     ✓ Compiled in 12ms
+[10:55:57.929] Server  LOG     ✓ Compiled in 13ms
+[10:55:58.242] Server  LOG     ✓ Compiled in 10ms
+[10:55:58.644] Server  LOG     ✓ Compiled in 11ms
+[10:58:21.767] Server  LOG     ✓ Compiled in 15ms
+[11:02:11.198] Server  LOG     ✓ Compiled in 26ms
+[11:02:11.534] Server  LOG     ✓ Compiled in 13ms
+[11:02:11.955] Server  LOG     ✓ Compiled in 13ms
+[11:02:23.323] Server  LOG     ✓ Compiled in 25ms
+[11:03:59.014] Server  LOG     ✓ Compiled in 15ms
+[11:18:18.429] Server  LOG     ✓ Compiled in 16ms
+[11:18:18.865] Server  LOG     ✓ Compiled in 10ms
+[11:25:03.812] Server  LOG     ✓ Compiled in 25ms
+[11:28:42.219] Server  LOG     ✓ Compiled in 25ms
+[11:29:56.271] Server  LOG     ✓ Compiled in 31ms
+[11:32:33.060] Server  LOG     ✓ Compiled in 15ms
+[11:34:16.814] Server  LOG     ✓ Compiled in 0ms
+[11:44:28.058] Server  LOG     ✓ Compiled in 42ms
+[11:45:47.233] Server  LOG     ✓ Compiled in 18ms
+[11:47:03.520] Server  LOG     ✓ Compiled in 55ms
+[11:48:21.904] Server  LOG     ✓ Compiled in 20ms
+[11:49:01.192] Server  LOG     ✓ Compiled in 19ms
+[11:50:14.952] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[11:50:16.055] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[11:52:10.533] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[11:52:47.475] Server  LOG     ✓ Compiled in 35ms
+[11:52:57.405] Server  LOG     ✓ Compiled in 18ms
+[11:53:01.026] Server  LOG     ✓ Compiled in 13ms
+[11:53:26.533] Server  LOG     ✓ Compiled in 16ms
+[11:53:31.421] Server  LOG     ✓ Compiled in 16ms
+[11:53:34.394] Server  LOG     ✓ Compiled in 16ms
+[11:53:58.669] Server  LOG     ✓ Compiled in 12ms
+[11:54:31.244] Server  LOG     ✓ Compiled in 13ms
+[11:54:33.426] Server  LOG     ✓ Compiled in 13ms
+[11:55:08.035] Server  LOG     ✓ Compiled in 14ms
+[11:55:10.548] Server  LOG     ✓ Compiled in 15ms
+[11:55:51.033] Server  LOG     ✓ Compiled in 16ms
+[11:55:56.466] Server  LOG     ✓ Compiled in 16ms
+[11:57:15.954] Server  LOG     ✓ Compiled in 13ms
+[11:57:23.045] Server  LOG     ✓ Compiled in 13ms
+[11:57:25.741] Server  LOG     ✓ Compiled in 18ms
+[11:57:30.337] Server  LOG     ✓ Compiled in 17ms
+[11:59:03.881] Server  LOG     ✓ Compiled in 36ms
+[11:59:44.025] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[11:59:55.517] Server  LOG     ✓ Compiled in 32ms
+[12:00:05.121] Server  LOG     ✓ Compiled in 56ms
+[12:00:24.423] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:01:25.335] Server  LOG     ✓ Compiled in 129ms
+[12:02:31.947] Server  LOG     ✓ Compiled in 61ms
+[12:03:39.743] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:03:42.811] Server  LOG     ✓ Compiled in 44ms
+[12:03:44.627] Server  LOG     ✓ Compiled in 21ms
+[12:03:47.097] Server  LOG     ✓ Compiled in 19ms
+[12:04:18.210] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:04:18.691] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:05:44.561] Server  LOG     ✓ Compiled in 29ms
+[12:06:27.995] Server  LOG     ✓ Compiled in 18ms
+[12:06:43.069] Server  LOG     ✓ Compiled in 22ms
+[12:06:46.321] Server  LOG     ✓ Compiled in 18ms
+[12:07:55.354] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[12:07:56.685] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:08:07.311] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:09:01.399] Server  LOG     ✓ Compiled in 28ms
+[12:09:02.163] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:09:29.714] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:10:20.944] Server  LOG     ✓ Compiled in 37ms
+[12:10:21.464] Server  LOG     ✓ Compiled in 25ms
+[12:10:21.789] Server  LOG     ✓ Compiled in 32ms
+[12:10:22.159] Server  LOG     ✓ Compiled in 30ms
+[12:10:57.256] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:11:25.044] Server  LOG     ✓ Compiled in 29ms
+[12:11:25.550] Server  LOG     ✓ Compiled in 17ms
+[12:12:07.851] Server  LOG     ✓ Compiled in 19ms
+[12:12:08.543] Server  LOG     ✓ Compiled in 15ms
+[12:12:18.250] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:12:39.563] Server  LOG     ✓ Compiled in 15ms
+[12:13:14.341] Server  LOG     ✓ Compiled in 16ms
+[12:13:33.294] Server  LOG     ✓ Compiled in 44ms
+[12:14:14.372] Server  LOG     ✓ Compiled in 16ms
+[12:16:31.649] Browser LOG     THREE.WebGLRenderer: Context Lost.

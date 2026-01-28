@@ -1,0 +1,199 @@
+'use client'; // Necesario para usar useState
+
+import React, { useState } from 'react';
+import { 
+  GraduationCap, 
+  BookOpen, 
+  ExternalLink, 
+  Award, 
+  FileText, 
+  Eye, 
+  EyeOff, 
+  Palette, 
+  Brain 
+} from 'lucide-react';
+
+// --- DATOS (Fácil de editar) ---
+const education = [
+  {
+    year: '2023',
+    title: 'Máster en Investigación en Psicología',
+    institution: 'UNED - Facultad de Psicología',
+    category: 'psychology',
+    details: 'Especialización en metodología de investigación y análisis de datos aplicados al comportamiento.'
+  },
+  {
+    year: '2021',
+    title: 'Experto en Apoyo Psicológico y Crisis',
+    institution: 'Talentia Formación / Univ. Nebrija',
+    category: 'psychology',
+    details: 'Técnicas de intervención en situaciones de emergencia y gestión emocional.'
+  },
+  {
+    year: '2017',
+    title: 'Doctorado en Artes (Mención Cum Laude)',
+    institution: 'Universidad de Granada',
+    category: 'art',
+    highlight: true,
+    details: 'Línea: Cultura Artística y Neuroestética. Tesis sobre la percepción visual en entornos digitales y estímulos supernormales.'
+  },
+  {
+    year: '2012',
+    title: 'Máster Oficial en Arte: Producción e Investigación',
+    institution: 'Universidad de Granada',
+    category: 'art',
+    details: 'Programa oficial en Artes y Humanidades centrado en la profesionalización artística.'
+  }
+];
+
+const publications = [
+  {
+    type: 'Ponencia',
+    title: 'La estética supernormal de la existencia: etic y emic...',
+    year: '2023',
+    link: 'https://eventos.urjc.es/...',
+    color: 'bg-zinc-100 text-zinc-700'
+  },
+  {
+    type: 'Capítulo',
+    title: 'Psicología cultural y redes sociales...',
+    year: '2023',
+    link: 'https://dialnet.unirioja.es/...',
+    color: 'bg-indigo-50 text-indigo-700'
+  },
+  {
+    type: 'Artículo',
+    title: 'Estímulos supernormales: porno y belkitsch',
+    year: '2022',
+    link: 'http://www.revistavalenciana.ugto.mx/...',
+    color: 'bg-zinc-100 text-zinc-700'
+  }
+];
+
+// --- COMPONENTE ---
+const CVInteractive = () => {
+  const [compactMode, setCompactMode] = useState(false);
+
+  return (
+    <div className="max-w-5xl mx-auto p-4 md:p-12 bg-[#fdfdfd] text-zinc-800 font-sans shadow-xl my-10 rounded-lg border border-zinc-100">
+      
+      {/* CONTROLES FLOTANTES (UX MEJORADA) */}
+      <div className="sticky top-4 z-50 flex justify-end gap-2 mb-[-40px]">
+         <button 
+           onClick={() => setCompactMode(!compactMode)}
+           className="bg-white/90 backdrop-blur border border-zinc-200 shadow-sm px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-zinc-50 transition-all"
+         >
+           {compactMode ? <Eye size={14}/> : <EyeOff size={14}/>} 
+           {compactMode ? 'Ver Detalles' : 'Vista Resumida'}
+         </button>
+      </div>
+
+      {/* HEADER */}
+      <header className="mb-16 pt-10">
+        <div className="flex flex-col md:flex-row justify-between items-baseline gap-4 border-b border-zinc-200 pb-8">
+          <div>
+            <h1 className="text-4xl md:text-6xl font-extralight tracking-tighter text-zinc-900 leading-none">
+              JUAN JOSÉ <span className="font-bold">MOGAT</span>
+            </h1>
+            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-zinc-500 font-medium">
+              Artista Multidisciplinar & Doctor en Arte
+            </p>
+          </div>
+          <button className="flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white hover:bg-blue-700 transition-all text-xs font-bold uppercase tracking-widest rounded-sm">
+             <FileText size={14} /> PDF CV
+           </button>
+        </div>
+        
+        {/* STATEMENT */}
+        {!compactMode && (
+          <div className="mt-10 bg-zinc-50 p-6 md:p-10 border-l-4 border-zinc-900 animate-in fade-in slide-in-from-top-4 duration-500">
+            <h3 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3 font-bold">Statement</h3>
+            <p className="text-lg md:text-xl leading-relaxed font-serif text-zinc-700 italic">
+              "Exploro la intersección entre la <span className="text-zinc-900 font-medium not-italic">neuroestética</span> y la cultura contemporánea..."
+            </p>
+          </div>
+        )}
+      </header>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        {/* COLUMNA IZQUIERDA: Formación (7/12) */}
+        <div className="lg:col-span-7">
+          <div className="flex items-center gap-3 mb-8">
+            <GraduationCap className="text-indigo-900" size={24} />
+            <h2 className="text-xs uppercase tracking-[0.2em] font-black text-zinc-900">Trayectoria Académica</h2>
+          </div>
+
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div key={index} className={`group relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[1px] before:bg-zinc-200 transition-all ${edu.highlight ? 'hover:before:bg-amber-500' : 'hover:before:bg-indigo-600'}`}>
+                
+                {/* Timeline Dot */}
+                <div className={`absolute left-[-4px] top-2 w-2 h-2 rounded-full transition-colors ${edu.highlight ? 'bg-amber-500 ring-4 ring-amber-100' : 'bg-zinc-300 group-hover:bg-indigo-600'}`}></div>
+                
+                {/* Fecha y Categoría */}
+                <div className="flex items-center gap-3 mb-1">
+                  <span className={`text-[10px] font-bold tracking-widest uppercase ${edu.highlight ? 'text-amber-600' : 'text-zinc-400'}`}>
+                    {edu.year}
+                  </span>
+                  {/* BADGES TEMÁTICOS */}
+                  <span className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase flex items-center gap-1 ${edu.category === 'art' ? 'bg-amber-50 text-amber-700' : 'bg-blue-50 text-blue-700'}`}>
+                    {edu.category === 'art' ? <Palette size={10}/> : <Brain size={10}/>}
+                    {edu.category === 'art' ? 'Arte' : 'Psico'}
+                  </span>
+                </div>
+
+                {/* Contenido */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className={`text-lg font-bold leading-tight ${edu.highlight ? 'text-zinc-900' : 'text-zinc-800'}`}>
+                      {edu.title}
+                      {edu.highlight && <Award size={16} className="inline ml-2 text-amber-500 mb-1"/>}
+                    </h3>
+                    <p className="text-sm text-zinc-500 font-medium mt-1">{edu.institution}</p>
+                    
+                    {/* Detalles colapsables */}
+                    {!compactMode && edu.details && (
+                      <p className="mt-3 text-sm text-zinc-600 leading-relaxed border-l-2 border-zinc-100 pl-4 py-1">
+                        {edu.details}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* COLUMNA DERECHA: Publicaciones (5/12) */}
+        <div className="lg:col-span-5">
+          <div className="flex items-center gap-3 mb-8">
+            <BookOpen className="text-zinc-400" size={24} />
+            <h2 className="text-xs uppercase tracking-[0.2em] font-black text-zinc-900">Publicaciones</h2>
+          </div>
+
+          <div className="space-y-3">
+            {publications.map((pub, i) => (
+              <a key={i} href={pub.link} target="_blank" className="block p-5 border border-zinc-100 bg-white hover:border-zinc-300 hover:shadow-lg transition-all rounded-lg group">
+                <div className="flex justify-between items-start mb-3">
+                  <span className={`text-[9px] font-black uppercase px-2 py-1 rounded-sm ${pub.color}`}>
+                    {pub.type}
+                  </span>
+                  <ExternalLink size={14} className="text-zinc-300 group-hover:text-zinc-900 transition-colors" />
+                </div>
+                <h4 className="text-sm font-bold leading-snug text-zinc-800 mb-2 group-hover:text-indigo-900 transition-colors">
+                  "{pub.title}"
+                </h4>
+                <div className="w-full h-px bg-zinc-50 my-2"></div>
+                <p className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider text-right">{pub.year}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  );
+};
+
+export default CVInteractive;

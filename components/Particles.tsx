@@ -72,7 +72,7 @@ export default function Particles() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="fixed left-0 top-0 w-[100vw] h-[100dvh] pointer-events-none"
       style={{ zIndex: 1 }}
     />
   );

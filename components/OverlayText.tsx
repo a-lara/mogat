@@ -48,8 +48,10 @@ export default function OverlayText({
                 className="absolute bottom-0 left-0 h-1"
                 style={{ 
                   width: '45%',
-                  backgroundColor: '#003153',
-                  marginTop: '0.2em'
+                  backgroundColor: '#ff6b35',
+                  marginTop: '0.2em',
+                  boxShadow: '0 0 10px rgba(255, 107, 53, 0.8), 0 0 20px rgba(255, 107, 53, 0.6), 0 0 30px rgba(255, 107, 53, 0.4)',
+                  filter: 'blur(0.5px)',
                 }}
               />
             </span>
