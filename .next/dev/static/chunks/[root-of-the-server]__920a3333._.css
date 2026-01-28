@@ -1859,6 +1859,10 @@
     }
   }
 
+  .border-transparent {
+    border-color: #0000;
+  }
+
   .border-zinc-100 {
     border-color: var(--color-zinc-100);
   }
@@ -2535,6 +2539,11 @@
 
   .shadow-\[0_5px_20px_rgba\(36\,213\,180\,0\.1\)\] {
     --tw-shadow: 0 5px 20px var(--tw-shadow-color, #24d5b41a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-\[0_5px_20px_rgba\(255\,107\,53\,0\.15\)\] {
+    --tw-shadow: 0 5px 20px var(--tw-shadow-color, #ff6b3526);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 

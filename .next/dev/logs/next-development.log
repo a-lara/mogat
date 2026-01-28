@@ -134,3 +134,11 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [12:24:48.630] Browser LOG     THREE.WebGLRenderer: Context Lost.
 [12:24:49.895] Browser LOG     THREE.WebGLRenderer: Context Lost.
 [12:24:50.810] Server  LOG     ✓ Compiled in 39ms
+[12:27:52.898] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:28:02.738] Server  LOG     ✓ Compiled in 30ms
+[12:28:44.355] Server  LOG     ✓ Compiled in 33ms
+[12:28:58.022] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:29:00.623] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:29:09.616] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:29:38.703] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[12:29:39.647] Browser LOG     THREE.WebGLRenderer: Context Lost.
